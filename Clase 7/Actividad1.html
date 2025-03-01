@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de Cadenas en JavaScript</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .example {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1.1em;
+        }
+
+        .example p {
+            margin: 10px 0;
+        }
+
+        .highlight {
+            color: #ff6f61;
+            font-weight: bold;
+        }
+
+        .button {
+            background-color: #ff6f61;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 10px;
+        }
+
+        .button:hover {
+            background-color: #ff3b2f;
+            transform: scale(1.1);
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1.1em;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manipulación de Cadenas en JavaScript</h1>
+
+        <!-- Cadena de ejemplo -->
+        <div class="example">
+            <h2>Cadena de Ejemplo</h2>
+            <p id="originalText" class="highlight"></p>
+        </div>
+
+        <!-- 1. Length: Obtener la longitud de la cadena -->
+        <div class="example">
+            <h2>Longitud de la Cadena</h2>
+            <div class="output" id="lengthOutput"></div>
+        </div>
+
+        <!-- 2. Slice: Extraer una parte de la cadena -->
+        <div class="example">
+            <h2>Extraer un Fragmento</h2>
+            <div class="output" id="sliceOutput"></div>
+        </div>
+
+        <!-- 3. toUpperCase: Convertir toda la cadena a mayúsculas -->
+        <div class="example">
+            <h2>Convertir a Mayúsculas</h2>
+            <div class="output" id="upperCaseOutput"></div>
+        </div>
+
+        <!-- 4. Split: Dividir la cadena en un array de subcadenas -->
+        <div class="example">
+            <h2>Dividir la Cadena</h2>
+            <div class="output" id="splitOutput"></div>
+        </div>
+
+        <!-- 5. Replace: Reemplazar una subcadena por otra -->
+        <div class="example">
+            <h2>Reemplazar Subcadena</h2>
+            <div class="output" id="replaceOutput"></div>
+        </div>
+    </div>
+
+    <script>
+        // Cadena de ejemplo
+        let texto = "Hola, Mundo! Bienvenido a JavaScript.";
+
+        // Mostrar la cadena original
+        document.getElementById("originalText").textContent = texto;
+
+        // 1. Length: Obtener la longitud de la cadena
+        let longitud = texto.length;
+        document.getElementById("lengthOutput").innerHTML = `
+            <p><b>Longitud del texto:</b> ${longitud}</p>
+        `;
+
+        // 2. Slice: Extraer una parte de la cadena
+        let saludo = texto.slice(0, 10);
+        document.getElementById("sliceOutput").innerHTML = `
+            <p><b>Fragmento extraído:</b> ${saludo}</p>
+        `;
+
+        // 3. toUpperCase: Convertir toda la cadena a mayúsculas
+        let textoMayusculas = texto.toUpperCase();
+        document.getElementById("upperCaseOutput").innerHTML = `
+            <p><b>Texto en mayúsculas:</b> ${textoMayusculas}</p>
+        `;
+
+        // 4. Split: Dividir la cadena en un array de subcadenas
+        let palabras = texto.split(" ");
+        document.getElementById("splitOutput").innerHTML = `
+            <p><b>Array de palabras:</b> ${JSON.stringify(palabras)}</p>
+        `;
+
+        // 5. Replace: Reemplazar una subcadena por otra
+        let nuevoTexto = texto.replace("Mundo", "Amigo");
+        document.getElementById("replaceOutput").innerHTML = `
+            <p><b>Texto reemplazado:</b> ${nuevoTexto}</p>
+        `;
+    </script>
+</body>
+</html>
